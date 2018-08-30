@@ -548,7 +548,7 @@ public class Main2Activity extends AppCompatActivity {
                 Log.d("testReplace", "" + dayNumStr);
                 int dayNumStrToInt = Integer.parseInt(dayNumStr) -1;
 
-                if(dayNumStrToInt == 10){
+                if(dayNumStrToInt != 10){
 
                     AlertDialog alertDialog = new AlertDialog.Builder(Main2Activity.this).create();
                     alertDialog.setTitle("Your Days Number Explained");
@@ -561,7 +561,7 @@ public class Main2Activity extends AppCompatActivity {
                             });
                     alertDialog.show();
 
-                }else if(dayNumStrToInt != 10){
+                }else if(dayNumStrToInt == 10){
 
                     AlertDialog alertDialog = new AlertDialog.Builder(Main2Activity.this).create();
                     alertDialog.setTitle("Your Days Number Explained");
