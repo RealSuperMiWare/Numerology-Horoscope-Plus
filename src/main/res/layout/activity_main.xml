@@ -11,13 +11,17 @@
     <TextView
         android:id="@+id/signLabel"
         android:layout_width="0dp"
-        android:layout_height="31dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginTop="28dp"
+        android:layout_height="29dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical|center_horizontal"
         android:text="@string/signLabel"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/toButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <CalendarView
@@ -37,33 +41,14 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:text="@string/zodiacIsThis"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.972"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toButton" />
-
-    <Button
-        android:id="@+id/returnButton"
-        style="@style/Base.Widget.AppCompat.Button.Borderless"
-        android:layout_width="31dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:background="#ffffff"
-        android:gravity="center_horizontal|start"
-        android:text="@string/returnButton"
-        android:textAlignment="center"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="40sp"
-        app:layout_constraintEnd_toStartOf="@+id/signLabel"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/signLabel" />
 
     <TextView
         android:id="@+id/bestSignsLabel"
@@ -81,21 +66,7 @@
         app:layout_constraintHorizontal_bias="0.968"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/yourSignIsLabel"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/toButton"
-        android:layout_width="20dp"
-        android:layout_height="43dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
-        android:background="#ffffff"
-        android:text="@string/toButton"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="40sp"
-        style="@style/Base.Widget.AppCompat.Button.Borderless"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintVertical_bias="0.794" />
 
     <com.google.android.gms.ads.AdView
         xmlns:ads="http://schemas.android.com/apk/res-auto"

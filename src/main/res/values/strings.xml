@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HoroscopeLoveCompatibility</string>
+    <string name="app_name">Horoscope +</string>
     <string name="signLabel">What is your zodiac sign?</string>
     <string name="zodiacSignPickerButton">DONE</string>
     <string name="zodiacIsThis">Your Sign</string>
@@ -11,6 +11,4 @@
     <string name="dateTextView">DATE</string>
     <string name="datePassLabels">0</string>
     <string name="hintQuestionMark">\?</string>
-
-
 </resources>

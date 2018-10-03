@@ -8,6 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -43,8 +46,6 @@ public class Main2Activity extends AppCompatActivity {
     private LinearLayout totalLayout;
 
     // Buttons
-    private Button returnButton;
-    private Button toButton;
     private Button dayNumberButton;
     private Button monthNumberButton;
     private Button yearNumberButton;
@@ -61,27 +62,6 @@ public class Main2Activity extends AppCompatActivity {
         passDatesToZodiacFormula();
 
         numberButtonOnClick();
-
-
-        // Warning alert
-        toButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                AlertDialog alertDialog = new AlertDialog.Builder(Main2Activity.this).create();
-                alertDialog.setTitle("HEY...");
-                alertDialog.setMessage("Hey... Hey, I know. You wan't more.  \n" +
-                        "But give us just a bit more time.  We're \n" +
-                        "working on more features right now. Okay?");
-                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        });
-                alertDialog.show();
-            }
-        });
 
         // Initializes all variables in the Main2Activity layout
         loadAllUIVars();
@@ -123,22 +103,7 @@ public class Main2Activity extends AppCompatActivity {
         dateString.setText("" + date);
         dateHouseLayout.startAnimation(leftToRightAnimation);
 
-        // _________________________________________________________________________________________
 
-        // RETURN TO PREVIOUS
-        //
-        // returnButton, once tapped by the user will return the user to the best matches Activity or
-        // (MainActivity.java)
-        //
-        //
-
-        returnButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                returnIntent = new Intent(Main2Activity.this, MainActivity.class);
-                startActivity(returnIntent);
-            }
-        });
     }
 
 
@@ -162,8 +127,6 @@ public class Main2Activity extends AppCompatActivity {
         dateString = findViewById(R.id.dateTextView);
 
         // Buttons
-        returnButton = findViewById(R.id.returnButton);
-        toButton = findViewById(R.id.toButton);
         dayNumberButton = findViewById(R.id.dayNumber);
         yearNumberButton = findViewById(R.id.yearNumber);
         monthNumberButton = findViewById(R.id.monthNumber);
@@ -655,5 +618,46 @@ public class Main2Activity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.action_bar_objects, menu); //your file name
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int getId = item.getItemId();
+
+        //go Back
+        if(getId == R.id.returnToMain){
+
+            Intent toNew = new Intent(Main2Activity.this, MainActivity.class);
+            startActivity(toNew);
+
+        }
+
+        //Go Forward
+        if(getId == R.id.forwardOptions){
+
+            AlertDialog alertDialog = new AlertDialog.Builder(Main2Activity.this).create();
+            alertDialog.setTitle("HEY...");
+            alertDialog.setMessage("Hey... Hey, I know. You wan't more.  \n" +
+                    "But give us just a bit more time.  We're \n" +
+                    "working on more features right now. Okay?");
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+            alertDialog.show();
+
+        }
+
+
+        return true;
     }
 }

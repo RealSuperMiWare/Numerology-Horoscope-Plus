@@ -3,16 +3,22 @@ package com.openmessenger.supermiware.horoscopelovecompatibility;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Paint;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
@@ -32,8 +38,6 @@ public class MainActivity extends AppCompatActivity {
     private CalendarView zodiacDatePickerView;
     private TextView signLabel;
     private TextView yourSignIsLabel;
-    private Button returnButton;
-    private Button toButton;
     private Animation zodiacAnswerAnimation;
     private TextView bestSignsLabel;
     private Intent toButtonIntent;
@@ -125,12 +129,9 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog alert = builder.create();
         alert.show();
 
-
-        toButton = findViewById(R.id.toButton);
         yourSignIsLabel = findViewById(R.id.yourSignIsLabel);
         zodiacDatePickerView = findViewById(R.id.zodiacDatePickerView);
         bestSignsLabel = findViewById(R.id.bestSignsLabel);
-        returnButton = findViewById(R.id.returnButton);
         signLabel = findViewById(R.id.signLabel);
 
 
@@ -566,28 +567,46 @@ public class MainActivity extends AppCompatActivity {
         // _________________________________________________________________________________________
 
 
-        returnButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+    }
 
-                zodiacAnswerAnimation = AnimationUtils.loadAnimation(getApplicationContext(),
-                        R.anim.zodiacansweranimation);
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.action_bar_objects, menu); //your file name
+        return super.onCreateOptionsMenu(menu);
+    }
 
-                Log.d("visibleLogTest", "We're Good");
+    public boolean onOptionsItemSelected(MenuItem item) {
 
-                zodiacAnswerAnimation.setFillAfter(true);
-                zodiacDatePickerView.startAnimation(zodiacAnswerAnimation);
+        int getId = item.getItemId();
 
-            }
-        });
+        //go Back
+        if(getId == R.id.returnToMain){
 
-        toButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                toButtonIntent = new Intent(MainActivity.this, Main2Activity.class);
-                startActivity(toButtonIntent);
-            }
-        });
+            AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+            alertDialog.setTitle("HEY...");
+            alertDialog.setMessage("Hey... Hey, I know. You wan't more.  \n" +
+                    "But give us just a bit more time.  We're \n" +
+                    "working on more features right now. Okay?");
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
 
+            alertDialog.show();
+
+        }
+
+        //Go Forward
+        if(getId == R.id.forwardOptions){
+
+            Intent toNew = new Intent(MainActivity.this, Main2Activity.class);
+            startActivity(toNew);
+
+        }
+
+        return true;
     }
 }

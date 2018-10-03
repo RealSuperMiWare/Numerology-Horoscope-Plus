@@ -8,29 +8,19 @@
     android:background="#ffffff"
     tools:context=".Main2Activity">
 
-    <TextView
-        android:id="@+id/dailyNumberologyTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="17dp"
-        android:layout_marginEnd="84dp"
-        android:layout_marginTop="44dp"
-        android:text="@string/dailyNumberology"
-        app:layout_constraintEnd_toStartOf="@+id/toButton"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <LinearLayout
         android:id="@+id/dateHouseLayout"
         android:layout_width="0dp"
-        android:layout_height="248dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="164dp"
+        android:layout_marginTop="136dp"
         android:gravity="center_vertical|center_horizontal"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dailyNumberologyTextView">
+        app:layout_constraintTop_toBottomOf="@+id/dateTextView">
 
         <Button
             android:id="@+id/monthNumber"
@@ -60,51 +50,17 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/returnButton"
-        style="@style/Base.Widget.AppCompat.Button.Borderless"
-        android:layout_width="26dp"
-        android:layout_height="41dp"
-        android:layout_marginEnd="112dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:background="#ffffff"
-        android:text="@string/returnButton"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="40sp"
-        app:layout_constraintEnd_toStartOf="@+id/dailyNumberologyTextView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/dateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="80dp"
         android:text="@string/dateTextView"
-        app:layout_constraintBottom_toTopOf="@+id/dateHouseLayout"
         app:layout_constraintEnd_toStartOf="@+id/questionMarkButton"
-        app:layout_constraintHorizontal_bias="0.704"
+        app:layout_constraintHorizontal_bias="0.62"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dailyNumberologyTextView"
-        app:layout_constraintVertical_bias="0.472" />
-
-    <Button
-        android:id="@+id/toButton"
-        style="@style/Base.Widget.AppCompat.Button.Borderless"
-        android:layout_width="23dp"
-        android:layout_height="42dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
-        android:background="#ffffff"
-        android:text="@string/toButton"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="40sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -112,7 +68,7 @@
         android:layout_width="48dp"
         android:layout_height="37dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="64dp"
         android:background="#ffffff"
         android:text="@string/hintQuestionMark"
         android:textColor="@android:color/holo_blue_dark"
