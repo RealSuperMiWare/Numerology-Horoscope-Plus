@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
-    tools:context="com.openmessenger.supermiware.horoscopeplus02.Main2Activity">
+    tools:context="com.openmessenger.supermiware.HoroscopePlus02.Main2Activity">
 
     <LinearLayout
         android:id="@+id/dateHouseLayout"

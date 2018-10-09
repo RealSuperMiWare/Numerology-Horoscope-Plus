@@ -1,4 +1,4 @@
-package com.openmessenger.supermiware.horoscopeplus02;
+package com.openmessenger.supermiware.HoroscopePlus02;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -416,7 +416,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                     }else if ((signDateCapricornInt >= capricornStartInt) & (signDateCapricornInt <= capricornEndInt)
-                            || (signDateCancerInt >= capricornScopeStartInt) & (signDateCapricornInt <= capricornScopeEndInt)){
+                            || (signDateCapricornInt >= capricornScopeStartInt) & (signDateCapricornInt <= capricornScopeEndInt)){
 
                         Log.d("CapricornTestLog", "You've returned Capricorn");
                         zodiacAnswerAnimation = AnimationUtils.loadAnimation(getApplicationContext(),

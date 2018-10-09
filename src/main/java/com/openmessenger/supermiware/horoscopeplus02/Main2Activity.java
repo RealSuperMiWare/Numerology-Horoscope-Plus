@@ -1,4 +1,4 @@
-package com.openmessenger.supermiware.horoscopeplus02;
+package com.openmessenger.supermiware.HoroscopePlus02;
 
 import android.content.DialogInterface;
 import android.content.Intent;

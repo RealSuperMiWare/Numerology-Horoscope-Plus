@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.openmessenger.supermiware.horoscopeplus02">
+    package="com.openmessenger.supermiware.HoroscopePlus02">
 
     <application
         android:allowBackup="false"
@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="com.openmessenger.supermiware.horoscopeplus02.MainActivity"
+        <activity android:name="com.openmessenger.supermiware.HoroscopePlus02.MainActivity"
             android:screenOrientation="portrait">
 
             <intent-filter android:label="@string/app_name">
@@ -33,7 +33,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.openmessenger.supermiware.horoscopeplus02.Main2Activity"
+        <activity android:name="com.openmessenger.supermiware.HoroscopePlus02.Main2Activity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
